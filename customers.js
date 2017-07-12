@@ -454,7 +454,8 @@ for (var i = 0; i < array.length; i++) {
     <img src="${array[i].picture.large}" alt="">
     <h1>${array[i].name.first} ${array[i].name.last}</h1>
     <h2>${array[i].email}</h2>
-    <h3>${array[i].location.street}<br>${array[i].location.city}, ${array[i].location.state}, ${array[i].location.postcode}</h3>
+    <h3>${array[i].location.street}</h3>
+    <h3>${array[i].location.city}, ${array[i].location.state}, ${array[i].location.postcode}</h3>
     <h4>${array[i].phone}</h4>
     <h5>${array[i].id.value}</h5>
   </div>
