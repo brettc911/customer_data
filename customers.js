@@ -440,59 +440,72 @@ const customers = {
   }
 };
 
+
+
+
+
+
 let array = customers.results
-
+let info = ""
 for (var i = 0; i < array.length; i++) {
-
-  <div class="">
-    <img src="https://randomuser.me/api/portraits/men/0.jpg" alt="">
-    <h1></h1>
-    <h2></h2>
-    <h3><br></h3>
-    <h4></h4>
-    <h5></h5>
+  info +=
+    `
+  <div class="customerBox">
+    <img src="${array[i].picture.large}" alt="">
+    <h1>${array[i].name.first} ${array[i].name.last}</h1>
+    <h2>${array[i].email}</h2>
+    <h3>${array[i].location.street}<br>${array[i].location.city}, ${array[i].location.state}, ${array[i].location.postcode}</h3>
+    <h4>${array[i].phone}</h4>
+    <h5>${array[i].id.value}</h5>
   </div>
-
-  ///=====  CREATING ELEMENTS =====/////
-  let div = document.createElement('div')
-  let img = document.createElement('img')
-  let h1 = document.createElement('h1')
-  let h2 = document.createElement('h2')
-  let h3 = document.createElement('h3')
-  let h4 = document.createElement('h4')
-  let h5 = document.createElement('h5')
-
-///=====  ADDING INFORMATION TO ELEMENTS =====/////
-  div.setAttribute('class', 'customerBox')
-  img.setAttribute('src', array[i].picture.large)
-  h1.innerHTML = `${array[i].name.first} ${array[i].name.last}`
-  h2.innerHTML = array[i].email
-  h3.innerHTML = array[i].location.street
-                 array[i].location.city+", "+
-                 array[i].location.state+", "+
-                 array[i].location.postcode
-
-
-
-  //
-  // h4.innerHTML = array[i].location.
-  // h5.innerHTML = array[i].email
-
-
-  ///=====  APPENDING TO THE DOM =====/////
-  div.appendChild(img)
-  div.appendChild(h1)
-  div.appendChild(h2)
-  div.appendChild(h3)
-  div.appendChild(h4)
-  div.appendChild(h5)
-  document.querySelector('.directory').appendChild(div)
+  `
 }
+document.querySelector('.directory').innerHTML = info
 
 
-// img
-// h1 name
-// h2 email
-// h3 address
-// h4 phonenumber
-// h5 ssn
+
+
+
+//   ///=====  CREATING ELEMENTS =====/////
+//   let div = document.createElement('div')
+//   let img = document.createElement('img')
+//   let h1 = document.createElement('h1')
+//   let h2 = document.createElement('h2')
+//   let h3 = document.createElement('h3')
+//   let h4 = document.createElement('h4')
+//   let h5 = document.createElement('h5')
+//
+// ///=====  ADDING INFORMATION TO ELEMENTS =====/////
+//   div.setAttribute('class', 'customerBox')
+//   img.setAttribute('src', array[i].picture.large)
+//   h1.innerHTML = `${array[i].name.first} ${array[i].name.last}`
+//   h2.innerHTML = array[i].email
+//   h3.innerHTML = array[i].location.street
+//                  array[i].location.city+", "+
+//                  array[i].location.state+", "+
+//                  array[i].location.postcode
+//
+//
+//
+//   //
+//   // h4.innerHTML = array[i].location.
+//   // h5.innerHTML = array[i].email
+//
+//
+//   ///=====  APPENDING TO THE DOM =====/////
+//   div.appendChild(img)
+//   div.appendChild(h1)
+//   div.appendChild(h2)
+//   div.appendChild(h3)
+//   div.appendChild(h4)
+//   div.appendChild(h5)
+//   document.querySelector('.directory').appendChild(div)
+// }
+//
+//
+// // img
+// // h1 name
+// // h2 email
+// // h3 address
+// // h4 phonenumber
+// // h5 ssn
